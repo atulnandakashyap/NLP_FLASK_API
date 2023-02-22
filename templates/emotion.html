@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emotion Detection</title>
+</head>
+<body bgcolor="#EDF0D8">
+<table align="center" width="80%">
+    <tr>
+        <td height="20"></td>
+    </tr>
+    <tr align="center" height="100">
+        <td>
+            <h1>Emotion Detection</h1>
+        </td>
+    </tr>
+    <tr align="center" height="20">
+        <td>
+                <a href="/profile">Profile</a> &emsp;
+                <a href="/abuse">Abuse Detection</a> &emsp;
+                <a href="/sentiment">Sentiment Detection</a> &emsp;
+                <a href="/ner">Named Entity Recognition (NER)</a>
+        </td>
+    </tr>
+    <tr><td height="30"></td></tr>
+    <tr>
+        <td>
+            <form action="/perform_emotion_detection" method="post">
+                <table align="center" width="90%">
+                    <tr>
+                        <td style="padding: 20px" width="45%" align="right"><label>Enter your text here</label></td>
+                        <td style="padding: 20px"><textarea name="text" rows="10" cols="50"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td  style=" padding-left: 20px;">
+                            <input type="submit" value="Detect Emotion"
+                                   style="width:150px; height:30px;background: #97A1A9;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {% if response %}
+            <h3>Output: </h3>
+            <table>
+                {% for i in response["emotion"]: %}
+                <tr><td width="100px" style="padding: 1px;">{{i}}</td><td width="200px">{{response['emotion'][i]|round(2, 'floor') }}</td></tr>
+                {% endfor%}
+            </table>
+            {% endif %}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+

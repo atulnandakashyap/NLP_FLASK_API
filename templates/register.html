@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+<!--
+/* @group Blink */
+.blink {
+ -webkit-animation: blink .75s linear infinite;
+ -moz-animation: blink .75s linear infinite;
+ -ms-animation: blink .75s linear infinite;
+ -o-animation: blink .75s linear infinite;
+ animation: blink .75s linear infinite;
+}
+@-webkit-keyframes blink {
+ 0% { opacity: 1; }
+ 50% { opacity: 1; }
+ 50.01% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+ 0% { opacity: 1; }
+ 50% { opacity: 1; }
+ 50.01% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+ 0% { opacity: 1; }
+ 50% { opacity: 1; }
+ 50.01% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+@-o-keyframes blink {
+ 0% { opacity: 1; }
+ 50% { opacity: 1; }
+ 50.01% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+@keyframes blink {
+ 0% { opacity: 1; }
+ 50% { opacity: 1; }
+ 50.01% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+/* @end */
+-->
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>NLP App | Register Page </title>
+</head>
+<body bgcolor="#EDF0D8">
+<table align="center" width="80%">
+    <tr align="center" height="100">
+        <td>
+            <h1>NLP Application</h1>
+        </td>
+    </tr>
+    <tr align="center" height="100">
+        <td>
+            {% if message%}
+                <p class="tab blink" style="color:red">{{message}}</p>
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form action="/perform_registration" method="post">
+                <table align="center">
+                    <tr>
+                        <td width="30%" style="padding: 10px"><label>Name</label></td>
+                        <td style="padding: 10px"><input type="text" name="user_name" required style="width:200px"></td>
+                    </tr>
+                    <tr>
+                        <td width="30%" style="padding: 10px"><label>Email</label></td>
+                        <td style="padding: 10px"><input type="email" name="user_email" required style="width:200px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px"><label>Password</label></td>
+                        <td style="padding: 10px"><input type="password" name="user_password" required
+                                                         style="width:200px"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td height="50" style="padding: 10px; padding-left: 40px;">
+                            <input type="submit" value="Register" style="width:150px; height:30px;background: #97A1A9;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <p>Already a member? <a href="/">Login here</a></p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
